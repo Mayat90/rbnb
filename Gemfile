@@ -20,6 +20,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'awesome_print'
 gem 'faker'
+gem 'as-duration'
 
 group :development, :test do
   gem 'pry-byebug'
