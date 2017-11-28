@@ -27,7 +27,7 @@ require 'as-duration'
     )
 end
 
-10.times do 
+10.times do
   user_place = UserPlace.create!(
     name: Faker::Name.first_name,
     address:Faker::Address.street_address,
@@ -43,8 +43,8 @@ end
   end_time = Faker::Time.forward(7, :all)
   if end_time > start_time
     availability = Availability.new(
-      start: start_time
-      end: end_time
+      start: start_time,
+      end: end_time,
       user_place_id: rand(1..10).to_i
     )
   availability.save!
