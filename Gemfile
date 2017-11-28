@@ -21,6 +21,7 @@ gem 'omniauth-google-oauth2'
 gem 'awesome_print'
 gem 'faker'
 gem 'as-duration'
+gem 'simple_calendar', '~> 2.0'
 
 group :development, :test do
   gem 'pry-byebug'
