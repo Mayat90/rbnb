@@ -10,6 +10,34 @@ require 'as-duration'
 
 
 
+10.times do
+  nb = [1, 2, 3, 4].sample
+  bab = [true, false].sample
+
+  User.create!(
+      email: Faker::Internet.email,
+      first_name: Faker::Name.first_name,
+      last_name: Faker::Name.last_name,
+      description: Faker::Lorem.paragraph,
+      password: Faker::Internet.password,
+      number_of_kids: nb,
+      babysitter: bab,
+      photo: "http://lorempixel.com/400/200/people",
+      iban: Faker::Code.ean
+    )
+end
+
+10.times do 
+  user_place = UserPlace.create!(
+    name: Faker::Name.first_name,
+    address:Faker::Address.street_address,
+    photo: "http://www.book-a-flat.com/images/paris-salon-2.jpg",
+    capacity: rand(1..5).to_i,
+    price: rand(8..15).to_i,
+    user_id: rand(1..10).to_i
+    )
+end
+
 100.times do
   start_time = Faker::Time.forward(7, :all)
   end_time = Faker::Time.forward(7, :all)
