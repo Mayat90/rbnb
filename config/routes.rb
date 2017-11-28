@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :user_places do
-    resources :availabilities, only: [ :index, :new, :create ]
+    resources :availabilities, only: [ :index, :new, :create, :destroy ]
   end
-  resources :availabilitis, only: [:edit, :update, :destroy ]
+  resources :availabilities, only: [:edit, :update]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
