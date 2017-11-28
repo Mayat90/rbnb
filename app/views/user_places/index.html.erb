@@ -1,2 +1,7 @@
-<h1>UserPlaces#index</h1>
-<p>Find me in app/views/user_places/index.html.erb</p>
+<h1>Liste des appartements</h1>
+<% @user_places.each do |user_place| %>
+<%= user_place.address %>
+<%= user_place.photo %>
+<%= user_place.capacity %>
+<%= user_place.price %>
+<% end %>
