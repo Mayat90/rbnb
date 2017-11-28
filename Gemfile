@@ -17,7 +17,8 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'devise'
 gem 'omniauth-facebook'
-
+gem 'omniauth-google-oauth2'
+gem 'awesome_print'
 
 group :development, :test do
   gem 'pry-byebug'
