@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-5.times do 
+10.times do 
   user_place = UserPlace.create!(
     name: Faker::Name.first_name,
     address:Faker::Address.street_address,
