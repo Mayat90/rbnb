@@ -1,0 +1,7 @@
+<h1>Liste des appartements</h1>
+<% @user_places.each do |user_place| %>
+<%= user_place.address %>
+<%= user_place.photo %>
+<%= user_place.capacity %>
+<%= user_place.price %>
+<% end %>
