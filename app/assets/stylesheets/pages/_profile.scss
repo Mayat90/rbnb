@@ -1,0 +1,46 @@
+.myflex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mygrow {
+  flex-grow: 1;
+}
+
+.center {
+  text-align: center;
+}
+
+.fondcard {
+  border: 1px solid #111;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px black;
+  background-color: #ddd;
+  padding: 20px;
+  margin: 20px;
+}
+
+.btn {
+  background-color: $call;
+  border: 1px solid $callborder;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px black;
+  margin: 20px;
+  padding: 10px;
+}
+.btn:hover {
+  background-color: $callhover;
+}
+
+.img-thumbnail {
+  box-shadow: 1px 1px 2px black;
+
+}
+
+.green {
+  color: $valid;
+}
+.flatlist {
+  width: 400px;
+  margin: 20px;
+}
