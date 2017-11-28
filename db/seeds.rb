@@ -27,6 +27,7 @@ require 'as-duration'
     )
 end
 
+
 2.times do 
   user_place = UserPlace.create!(
     name: Faker::Name.first_name,
@@ -38,7 +39,8 @@ end
     )
 end
 
-10.times do 
+10.times do
+
   user_place = UserPlace.create!(
     name: Faker::Name.first_name,
     address:Faker::Address.street_address,
