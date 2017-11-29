@@ -28,7 +28,7 @@ require 'as-duration'
 end
 
 
-2.times do 
+3.times do
   user_place = UserPlace.create!(
     name: Faker::Name.first_name,
     address:Faker::Address.street_address,
@@ -40,7 +40,6 @@ end
 end
 
 10.times do
-
   user_place = UserPlace.create!(
     name: Faker::Name.first_name,
     address:Faker::Address.street_address,
@@ -50,6 +49,7 @@ end
     user_id: rand(1..10).to_i
     )
 end
+
 
 8.times do
   start_time = Faker::Time.forward(7, :all)
