@@ -1,1 +1,7 @@
 <h1>Votre appartement</h1>
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    const coord = <%= raw @user_place.coordinates.to_json %>
+    alert('<%= @alert_message %>');
+  <% end %>
+<% end %>

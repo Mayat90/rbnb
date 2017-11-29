@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :user_places do
     resources :availabilities, only: [ :index, :new, :create, :destroy ]
+    # reservations :reservations, only: [ :new, :create]
   end
   resources :availabilities, only: [:edit, :update]
 
