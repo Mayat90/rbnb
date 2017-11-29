@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :user_places
   has_many :availabilities, through: :user_places
 
+  has_attachment :cphoto
 
   validates :first_name, presence: true
   validates :last_name, presence: true

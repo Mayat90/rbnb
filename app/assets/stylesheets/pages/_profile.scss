@@ -2,6 +2,9 @@
   display: flex;
   justify-content: space-between;
 }
+.myflex div {
+  padding: 10px;
+}
 
 .mygrow {
   flex-grow: 1;
@@ -51,4 +54,8 @@
 .twocol {
   width: 50%;
   padding: 20px;
+}
+#avatarshow {
+  width: 200px;
+  height: 200px;
 }
