@@ -2,7 +2,7 @@ class UserPlacesController < ApplicationController
 
   before_action :set_user_place, only: [:show, :edit, :update, :destroy]
   def index
-    @user_places = UserPlaces.all
+    @user_places = current_user.user_places
   end
 
   def show
@@ -30,14 +30,14 @@ class UserPlacesController < ApplicationController
   end
 
   def destroy
-    @user.place.destroy
+    @user_place.destroy
     redirect_to user_places_path
   end
 
   private
 
   def set_user_place
-    @user_place = UserPlace.find(params[:id])
+    @user_place = current_user.user_places.find(params[:id])
   end
 
   def user_place_params
