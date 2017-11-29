@@ -1,11 +1,21 @@
 class UserPlacesController < ApplicationController
-
   before_action :set_user_place, only: [:show, :edit, :update, :destroy]
+
   def index
+    @current_user_places = current_user.user_places
+    @user_places =  UserPlace.where.not(latitude: nil, longitude: nil)
+
+    @markers = Gmaps4rails.build_markers(@user_places) do |flat, marker|
+      marker.lat user_place.latitude
+      marker.lng user_place.longitude
+    end
     @user_places = current_user.user_places
   end
 
+
   def show
+    @alert_message = "Yoyu are viewing #{@user_place.name}"
+    @user_place_coordinates = { lat: @user_place.latitude, lng: @user_place.longitude}
   end
 
   def new
