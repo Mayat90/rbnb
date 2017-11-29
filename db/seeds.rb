@@ -9,6 +9,7 @@ require 'faker'
 require 'as-duration'
 
 
+
 10.times do
   nb = [1, 2, 3, 4].sample
   bab = [true, false].sample
@@ -25,7 +26,6 @@ require 'as-duration'
       iban: Faker::Code.ean
     )
 end
-
 
 3.times do
   user_place = UserPlace.create!(

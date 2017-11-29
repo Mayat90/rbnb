@@ -8,6 +8,7 @@ gem 'puma'
 gem 'rails', '5.0.6'
 gem 'redis'
 
+
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
 gem 'bootstrap-form'
