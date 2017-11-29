@@ -1,3 +1,3 @@
 class Review < ApplicationRecord
-  has_one :reservation
+  # has_one :reservation
 end

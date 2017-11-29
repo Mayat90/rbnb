@@ -1,3 +1,4 @@
-<div class="fondcard">
-  <%= @user_place.name %>
+<div class="fondcard flatcard" style='background-image: radial-gradient(circle at center, rgba(0,0,0,0.8), rgba(0,0,0,0.5)), url(<%= @user_place.photo %> );'>
+  <h3><%= @user_place.name %></h3>
+  <p><%= @user_place.address %></p>
 </div>

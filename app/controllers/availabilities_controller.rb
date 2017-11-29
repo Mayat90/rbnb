@@ -4,6 +4,10 @@ class AvailabilitiesController < ApplicationController
 
   # pas besoin d'index à priori on iterera user_place.availabilities dans le show de user_place
 
+  def index
+    @availabilities = Availability.all
+  end
+
   def new
     @availability = Availability.new
   end

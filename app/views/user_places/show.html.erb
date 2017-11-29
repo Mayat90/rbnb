@@ -5,3 +5,12 @@
     alert('<%= @alert_message %>');
   <% end %>
 <% end %>
+
+<% @user_place.availabilities.each do |availability| %>
+<%= availability.start %>
+<%= availability.end %>
+<% end %>
+
+<%= month_calendar do |date| %>
+  <%= date %>
+<% end %>

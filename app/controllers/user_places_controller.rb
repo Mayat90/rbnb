@@ -9,6 +9,7 @@ class UserPlacesController < ApplicationController
       marker.lat user_place.latitude
       marker.lng user_place.longitude
     end
+    @user_places = current_user.user_places
   end
 
 
@@ -39,14 +40,14 @@ class UserPlacesController < ApplicationController
   end
 
   def destroy
-    @user.place.destroy
+    @user_place.destroy
     redirect_to user_places_path
   end
 
   private
 
   def set_user_place
-    @user_place = UserPlace.find(params[:id])
+    @user_place = current_user.user_places.find(params[:id])
   end
 
   def user_place_params
