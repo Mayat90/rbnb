@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   get 'profile', to: 'profile#show'
-
-  get 'profile/edit', to: 'profile#edit'
-  post 'profile/edit', to: 'profile#update'
+  # get 'user_places/find', to: 'user_places#find'
 
   devise_for :users,
   controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
@@ -11,14 +9,11 @@ Rails.application.routes.draw do
 
   resources :user_places do
     resources :availabilities, only: [ :index, :new, :create, :destroy ]
-    # reservations :reservations, only: [ :new, :create]
-    resources :reservations, only: [:show, :create, :new]
+    resources :reservations, only: [:create, :new]
   end
   resources :availabilities, only: [:edit, :update]
 
-
-  mount Attachinary::Engine => "/attachinary"
-  resources :reservations, only: [ :index, :edit, :update, :destroy]
+  resources :reservations, only: [:show, :index, :edit, :update, :destroy]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

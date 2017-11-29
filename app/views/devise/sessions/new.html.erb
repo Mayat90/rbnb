@@ -1,15 +1,30 @@
-<h2>Log in</h2>
+<div id="login-box">
+  <div class="left">
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email, required: false, autofocus: true %>
-    <%= f.input :password, required: false %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-  </div>
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-inputs">
+        <%= f.input :email, required: false, autofocus: true %>
+        <%= f.input :password, required: false %>
+        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+      </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
+      <div class="form-actions">
+        <%= f.button :submit, "Connexion" %>
+      </div>
+    <% end %>
 
 <%= render "devise/shared/links" %>
+
+  </div>
+  
+<!--   <div class="right">
+    <span class="loginwith"><br />Réseaux sociaux</span>
+    
+    <button class="social-signin facebook">Connexion Facebook</button>
+    <button class="social-signin google">Connexion Google+</button>
+  </div>
+  <div class="or">OR</div> -->
+</div>
+
+
+
