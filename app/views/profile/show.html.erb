@@ -23,9 +23,11 @@
     </div>
     <div class="flatlist center">
       Mes adresses :
-
       <% current_user.user_places.each do |user_place| %>
         <% @user_place = user_place %>
+       <% current_user.user_places.each do |user_place| %>
+        <% @user_place = user_place %>
+        <div class="fondcard">
           <%= render 'shared/flat' %>
       <% end %>
     </div>

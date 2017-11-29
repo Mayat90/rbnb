@@ -18,6 +18,7 @@ class UserPlacesController < ApplicationController
       redirect_to user_place_path(@user_place)
     else
       render :new
+    end
   end
 
   def edit

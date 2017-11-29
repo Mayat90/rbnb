@@ -28,7 +28,6 @@ require 'as-duration'
 end
 
 
-
 3.times do
   user_place = UserPlace.create!(
     name: Faker::Name.first_name,
@@ -39,7 +38,6 @@ end
     user_id: 1
     )
 end
-
 
 10.times do
   user_place = UserPlace.create!(
@@ -53,7 +51,7 @@ end
 end
 
 
-5.times do
+8.times do
   start_time = Faker::Time.forward(7, :all)
   end_time = Faker::Time.forward(7, :all)
   if end_time > start_time
@@ -66,7 +64,7 @@ end
   end
 end
 
-100.times do
+80.times do
   start_time = Faker::Time.forward(7, :all)
   end_time = Faker::Time.forward(7, :all)
   if end_time > start_time
