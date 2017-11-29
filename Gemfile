@@ -23,6 +23,11 @@ gem 'faker'
 gem 'as-duration'
 gem 'simple_calendar', '~> 2.0'
 
+gem 'cloudinary'
+gem 'attachinary', github: 'assembler/attachinary'
+gem 'jquery-fileupload-rails'
+gem 'coffee-rails'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
