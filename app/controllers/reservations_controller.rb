@@ -8,7 +8,8 @@ class ReservationsController < ApplicationController
   end
 
   def new
-    @reservation = Reservation.new
+    @babysitter = @user_place.user
+    @reservation = Reservation.new( parent: current_user, babysitter: @babysitter, number_of_kids: current_user.number_of_kids )
   end
 
   def create
@@ -16,7 +17,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
     @reservation.user_place = @user_place
     @reservation.parent = current_user
-    # @reservation.babysitter = 
+    # @reservation.babysitter =
     if @reservation.save
       redirect_to reservations_path
     else

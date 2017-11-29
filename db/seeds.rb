@@ -14,7 +14,7 @@ UserPlace.create!(
   photo: "http://www.book-a-flat.com/images/paris-salon-2.jpg",
   capacity: rand(1..5).to_i,
   price: rand(8..15).to_i,
-  user_id: 2
+  user_id: 1
   )
 
 
@@ -35,7 +35,6 @@ UserPlace.create!(
 #     )
 # end
 
-<<<<<<< HEAD
 # 10.times do
 #   user_place = UserPlace.create!(
 #     name: Faker::Name.first_name,
@@ -59,7 +58,6 @@ UserPlace.create!(
 #   availability.save!
 #   end
 # end
-=======
 
 3.times do
   user_place = UserPlace.create!(
@@ -118,4 +116,3 @@ end
     babysitter_id: 5,
     number_of_kids: 3
     )
->>>>>>> 1fc8e73c2b2cba31c85dc1171acee206ecbd2f8c

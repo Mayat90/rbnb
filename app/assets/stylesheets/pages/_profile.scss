@@ -13,6 +13,9 @@
 .center {
   text-align: center;
 }
+.myalign {
+  align-items: center;
+}
 
 .fondcard {
   border: 1px solid #111;
@@ -28,8 +31,8 @@
     width: 250px;
 }
 .btn {
-  background-color: $call;
-  border: 1px solid $callborder;
+  // background-color: $call;
+  // border: 1px solid $callborder;
   border-radius: 5px;
   box-shadow: 1px 1px 2px black;
   margin: 20px;
