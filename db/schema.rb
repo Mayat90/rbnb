@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171128142502) do
+ActiveRecord::Schema.define(version: 20171129102019) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,10 +30,10 @@ ActiveRecord::Schema.define(version: 20171128142502) do
     t.integer  "babysitter_id"
     t.datetime "start"
     t.datetime "end"
-    t.integer  "NumberOfKid"
+    t.integer  "number_of_kids"
     t.integer  "review_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.index ["babysitter_id"], name: "index_reservations_on_babysitter_id", using: :btree
     t.index ["parent_id"], name: "index_reservations_on_parent_id", using: :btree
     t.index ["review_id"], name: "index_reservations_on_review_id", using: :btree
