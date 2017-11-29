@@ -27,7 +27,6 @@ require 'as-duration'
     )
 end
 
-
 3.times do
   user_place = UserPlace.create!(
     name: Faker::Name.first_name,
