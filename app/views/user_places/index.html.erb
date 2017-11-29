@@ -1,9 +1,16 @@
-<div class="container"
+<div class="container">
+
+<div class="myflex">
+  <div>
+    <%= link_to new_user_place_reservation_path(@user_place) do %>
+  <%= render 'shared/flat' %>
+  <% end %>
+
+  <%= render 'shared/flat' %>
+
+  <%= render 'shared/flat' %>
+  </div>
 <div id="map" style="width: 100%; height: 600px;"></div>
-<div class="raw">
-  <%= render 'shared/flat' %>
-  <%= render 'shared/flat' %>
-  <%= render 'shared/flat' %>
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
     var handler = Gmaps.build('Google');
@@ -17,11 +24,7 @@
         handler.getMap().setZoom(14);
       }
     });
-    </div>
   <% end %>
 <% end %>
-
-
-
-
-
+  </div>
+</div>

@@ -3,7 +3,8 @@ class UserPlacesController < ApplicationController
 
   def index
     @current_user_places = current_user.user_places
-    @user_place = UserPlace.last
+    @user_place = UserPlace.last # à modifier
+    @reservation = Reservation.new
     @user_places =  UserPlace.where.not(latitude: nil, longitude: nil)
 
     @markers = Gmaps4rails.build_markers(@user_places) do |user_place, marker|
@@ -38,14 +39,14 @@ class UserPlacesController < ApplicationController
   end
 
   def destroy
-    @user.place.destroy
+    @user_place.destroy
     redirect_to user_places_path
   end
 
   private
 
   def set_user_place
-    @user_place = UserPlace.find(params[:id])
+    @user_place = current_user.user_places.find(params[:id])
   end
 
   def user_place_params

@@ -2,6 +2,9 @@
   display: flex;
   justify-content: space-between;
 }
+.myflex div {
+  padding: 10px;
+}
 
 .mygrow {
   flex-grow: 1;
@@ -18,8 +21,12 @@
   background-color: #ddd;
   padding: 20px;
   margin: 20px;
+  background-size: cover;
 }
-
+.flatcard {
+  color: #eee;
+    width: 250px;
+}
 .btn {
   background-color: $call;
   border: 1px solid $callborder;
@@ -41,6 +48,14 @@
   color: $valid;
 }
 .flatlist {
-  width: 400px;
+
   margin: 20px;
+}
+.twocol {
+  width: 50%;
+  padding: 20px;
+}
+#avatarshow {
+  width: 200px;
+  height: 200px;
 }

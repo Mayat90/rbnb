@@ -15,6 +15,21 @@ ActiveRecord::Schema.define(version: 20171129111534) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "attachinary_files", force: :cascade do |t|
+    t.string   "attachinariable_type"
+    t.integer  "attachinariable_id"
+    t.string   "scope"
+    t.string   "public_id"
+    t.string   "version"
+    t.integer  "width"
+    t.integer  "height"
+    t.string   "format"
+    t.string   "resource_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent", using: :btree
+  end
+
   create_table "availabilities", force: :cascade do |t|
     t.datetime "start"
     t.datetime "end"
@@ -30,10 +45,10 @@ ActiveRecord::Schema.define(version: 20171129111534) do
     t.integer  "babysitter_id"
     t.datetime "start"
     t.datetime "end"
-    t.integer  "NumberOfKid"
+    t.integer  "number_of_kids"
     t.integer  "review_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.index ["babysitter_id"], name: "index_reservations_on_babysitter_id", using: :btree
     t.index ["parent_id"], name: "index_reservations_on_parent_id", using: :btree
     t.index ["review_id"], name: "index_reservations_on_review_id", using: :btree
@@ -87,6 +102,7 @@ ActiveRecord::Schema.define(version: 20171129111534) do
     t.string   "token"
     t.datetime "token_expiry"
     t.string   "description"
+    t.string   "cphoto"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
