@@ -1,18 +1,31 @@
 <div class="welcome" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://images.parents.mdpcdn.com/sites/parents.com/files/styles/scale_1500_1500/public/ZdorovKirillVladimirovich_0.jpg');">
-  <div class="welcome-content form-group">
+  <div">
     <h1>Welcome to AirBabynB</h1>
     <p>Trouvez votre airbabysitter près de chez vous !</p>
     <%= form_tag("/user_places", method: "GET", class:"form-group") do %>
-
-        <div class="form-input">
-            <%= label_tag("Adresse") %>
-            <%= text_field_tag 'address' %>
-        
-        <%= label_tag("Date de début") %>
-        <%= text_field_tag 'start' %>
-        <%= label_tag("Date de fin") %>
-        <%= text_field_tag 'end' %>
-        <%= button_tag "Trouver BabynB" %>
+        <div class="row center">
+            <div class="form-group">
+                <%= label_tag("Adresse") %>
+                <%= text_field_tag 'address' %>
+            </div>
+        </div>
+        <div class="row center">
+            <div class="form-group">
+                <%= label_tag("Date de début") %>
+                <%= text_field_tag 'start' %>
+            </div>
+        </div>
+        <div class="row center">
+            <div class="form-group">
+                <%= label_tag("Date de fin") %>
+                <%= text_field_tag 'end' %>
+            </div>
+        </div>
+        <div class="row center">
+            <div class="form-group">
+                <%= button_tag "Trouver BabynB" %>   
+            </div>
+        </div>
     <% end %>
   </div>
 </div>
