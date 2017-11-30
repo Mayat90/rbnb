@@ -26,6 +26,8 @@
         </div>
       </div>
       <div class="flatlist center">
+        <p>Mon adresse :
+          <%= current_user.address %></p>
         Mes adresses :
          <% current_user.user_places.each do |user_place| %>
           <% @user_place = user_place %>
