@@ -2,7 +2,7 @@
   <div">
     <h1>Welcome to AirBabynB</h1>
     <p>Trouvez votre airbabysitter près de chez vous !</p>
-    <%= form_tag("/user_places", method: "GET", class:"form-group") do %>
+    <%= form_tag("/search", method: "GET", class:"form-group") do %>
         <div class="row center">
             <div class="form-group">
                 <%= label_tag("Adresse") %>
@@ -23,7 +23,7 @@
         </div>
         <div class="row center">
             <div class="form-group">
-                <%= button_tag "Trouver BabynB" %>   
+                <%= button_tag "Trouver BabynB" %>
             </div>
         </div>
     <% end %>
