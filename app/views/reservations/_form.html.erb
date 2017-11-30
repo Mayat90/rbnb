@@ -1,0 +1,31 @@
+<div class="container">
+  <%= simple_form_for @reservation, :url => user_place_reservations_path, :method => :post do |f| %>
+    <%= link_to "Back", :back %> Edit profile
+
+    <div class="form-inputs">
+      <div class="myflex">
+        <div class="mygrow">
+          <%= f.input :email, required: true, autofocus: true %>
+          <%= f.input :first_name, required: true %>
+          <%= f.input :last_name, required: true %>
+          <%= f.label "Description" %> <br/>
+          <%= f.text_area :description, size: "60x8" %>
+        </div>
+        <div>
+          <%= f.input :cphoto, as: :attachinary, label: "Avatar" %>
+          <%= f.input :number_of_kids %>
+          <%= f.input :iban %>
+          <%= f.input :babysitter %>
+          <%= f.button :submit, "Update" %>
+        </div>
+      </div>
+      <div>
+
+      </div>
+
+
+
+    </div>
+  <% end %>
+
+</div>
