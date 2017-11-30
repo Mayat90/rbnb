@@ -13,11 +13,27 @@ body {
   font-weight: 300;
 }
 
+h1 {
+  margin: 0 0 20px 0;
+  font-weight: 300;
+  font-size: 20px;
+}
+
 #login-box {
   position: relative;
   margin: 5% auto;
   width: 900px;
   height: 600px;
+  background: #FFF;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+#login-box-signup {
+  position: relative;
+  margin: 5% auto;
+  width: 900px;
+  height: 800px;
   background: #FFF;
   border-radius: 2px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
@@ -33,13 +49,8 @@ body {
   height: 400px;
 }
 
-h1 {
-  margin: 0 0 20px 0;
-  font-weight: 300;
-  font-size: 28px;
-}
-
 input[type="text"],
+input[type="email"],
 input[type="password"] {
   display: block;
   box-sizing: border-box;
@@ -56,30 +67,31 @@ input[type="password"] {
 }
 
 input[type="text"]:focus,
+input[type="email"]:focus,
 input[type="password"]:focus {
   border-bottom: 2px solid #16a085;
   color: #16a085;
   transition: 0.2s ease;
 }
 
-input[type="submit"] {
-  margin-top: 28px;
-  width: 120px;
-  height: 32px;
-  background: #16a085;
-  border: none;
-  border-radius: 2px;
-  color: #FFF;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  text-transform: uppercase;
-  transition: 0.1s ease;
-  cursor: pointer;
-}
+// input[type="submit"] {
+//   margin-top: 28px;
+//   width: 220px;
+//   height: 32px;
+//   background: #16a085;
+//   border: none;
+//   border-radius: 2px;
+//   color: #FFF;
+//   font-family: 'Roboto', sans-serif;
+//   font-weight: 500;
+//   text-transform: uppercase;
+//   transition: 0.1s ease;
+//   cursor: pointer;
+// }
 
 input[type="submit"]:hover,
 input[type="submit"]:focus {
-  opacity: 0.8;
+  opacity: 0.9;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   transition: 0.1s ease;
 }
@@ -90,18 +102,18 @@ input[type="submit"]:active {
   transition: 0.1s ease;
 }
 
-.or {
-  position: absolute;
-  top: 180px;
-  left: 280px;
-  width: 40px;
-  height: 40px;
-  background: #DDD;
-  border-radius: 50%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  line-height: 40px;
-  text-align: center;
-}
+// .or {
+//   position: absolute;
+//   top: 180px;
+//   left: 280px;
+//   width: 40px;
+//   height: 40px;
+//   background: #DDD;
+//   border-radius: 50%;
+//   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+//   line-height: 40px;
+//   text-align: center;
+// }
 
 .right {
   position: absolute;
