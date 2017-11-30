@@ -1,4 +1,43 @@
-<h1>Reservations#index</h1>
-<% @parent_reservations.each do |parent_reservation| %>
-<%= parent_reservation.start %>
-<% end %>
+<div class="container">
+
+      <div class="tabs">
+        <p class="tab-active">Vos airbabysitters</p>
+        <p href="#" class="tab">Vos airbabysittings</p>
+      </div>
+
+  <ul class="inbox">
+    <%= @parent_duration %>
+    <% @parent_reservations.each do |parent_reservation| %>
+    <div class="message">
+      <img class="avatar-large" src="https://graph.facebook.com/v2.6/10154479522909159/picture?type=square">
+      <div class="message-name">
+        <h3><%= parent_reservation.babysitter.first_name %> <%= parent_reservation.babysitter.last_name %></h3>
+     </div>
+      <div class="message-body">
+        <p><strong>De <%= parent_reservation.start.strftime("%B %d, %Y %H:%M") %> à <%= parent_reservation.end.strftime("%B %d, %Y %H:%M") %></strong></p>
+        <p>Adresse</p>
+      </div>
+      <div class="message-status">
+        <p class="status pending">En attente</p>
+        <p class="price">€15</p>
+      </div>
+    </div>
+    <% end %>
+
+    <% @babysitter_reservations.each do |parent_reservation| %>
+    <div class="message">
+      <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+      <div class="message-name">
+        <h3><%= babysitter_reservation.babysitter.first_name %> <%= babysitter_reservation.babysitter.last_name %></h3>
+     </div>
+      <div class="message-body">
+        <p><strong>De <%= babysitter_reservation.start %> à <%= babysitter_reservation.end %></strong></p>
+      </div>
+      <div class="message-status">
+        <p class="status pending">En attente</p>
+        <p class="price">€15</p>
+      </div>
+    </div>
+    <% end %>
+  </ul>
+</div>

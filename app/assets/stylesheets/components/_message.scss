@@ -1,0 +1,94 @@
+.inbox {
+  padding-left: 0px;
+  list-style: none;
+  border: 1px solid #cccccc;
+  margin: 0;
+}
+
+.tabs {
+ display: flex;
+ align-items: center;
+}
+
+.tab {
+ padding: 10px;
+  color: black;
+ opacity: 0.6;
+ font-size: 18px;
+ font-weight: bold;
+  text-decoration: none;
+  border-bottom: 5px solid transparent;
+}
+
+.tab-active {
+  font-size: 18px;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  opacity: 1;
+  border-bottom: 5px solid #00A699;
+  text-decoration: none;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid rgba(220,224,244,0.4);
+  background: white;
+}
+.message:last-child {
+  border-bottom: none;
+}
+.message-body {
+  flex-grow: 1;
+}
+.message-name {
+  padding-left: 10px;
+  min-width: 100px;
+}
+.message-name h3 {
+  font-size: 13px;
+  margin-bottom: 0px;
+}
+.message-name p {
+  font-size: 13px;
+  font-weight: lighter;
+  opacity: 0.6;
+  margin-top: 5px;
+}
+.message-body {
+  padding-left: 10px;
+  font-size: 13px;
+  color: rgba(0,0,0,0.7);
+}
+.message-body {
+  padding-left: 20px;
+  color: rgba(0,0,0,0.4);
+}
+.message-body strong{
+  color: rgba(0,0,0,0.9);
+  color: rgba(0,0,0,0.9);
+}
+.message-body p {
+  margin: 6px 0;
+}
+.message-status {
+  font-size: 14px;
+  font-weight: bold;
+}
+.status.accepted {
+  color: #04A366;
+}
+.status.declined {
+  color: red;
+}
+.status.pending {
+  color: lightgrey;
+}
+
+.message h3 {
+  margin-top: 0px;
+  font-size: 15px;
+}
