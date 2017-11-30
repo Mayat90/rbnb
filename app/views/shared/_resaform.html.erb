@@ -1,0 +1,36 @@
+<div class="form-group">
+  <%= simple_form_for @reservation, :url => user_place_reservations_path, :method => :post do |f| %>
+  <div class="">
+    <div>
+      <h2>Je souhaite resever <%= @babysitter.first_name %> <%= @babysitter.last_name %></h2>
+    </div>
+    <div class="numberofkids">
+      <%= f.input :number_of_kids, type: "number", label: "Nombre d'enfants" %>
+    </div><br/>
+
+      <%= f.label "a partir de :" %>
+    <div class='input-group date' id='datetimepicker1'>
+      <%= f.text_field :start, class: "form-control" %>
+      <span class="input-group-addon">
+          <span class="glyphicon glyphicon-calendar"></span>
+      </span>
+    </div>
+      <%= f.label "jusqu'a :" %>
+    <div class='input-group date' id='datetimepicker2'>
+      <%= f.text_field :end, class: "form-control" %>
+      <span class="input-group-addon">
+          <span class="glyphicon glyphicon-calendar"></span>
+      </span>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<% content_for(:after_js) do %>
+      <script type="text/javascript">
+          $(function () {
+              $('#datetimepicker1').datetimepicker();
+              $('#datetimepicker2').datetimepicker();
+          });
+      </script>
+<% end %>

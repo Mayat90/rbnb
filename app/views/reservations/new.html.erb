@@ -1,16 +1,7 @@
 <div class="container">
-  <%= simple_form_for @reservation do |f| %>
-    <div class="row center">
-      <h3>Je souhaite resever <%= @babysitter.first_name %> <%= @babysitter.last_name %> pour :</h3>
-      <div class="myflex myalign">
-        garder <%= f.input :number_of_kids, type: "number", label: false %> enfant(s).
-        <div class="mygrow">
+  <%= render 'shared/resaform' %>
 
-        </div>
-      </div>
 
-    </div>
-  <% end %>
   A
   <%= render 'shared/flat' %>
  CONFIRMER
