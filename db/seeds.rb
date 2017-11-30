@@ -14,7 +14,16 @@ UserPlace.create!(
   photo: "http://www.book-a-flat.com/images/paris-salon-2.jpg",
   capacity: rand(1..5).to_i,
   price: rand(8..15).to_i,
-  user_id: 1
+  user_id: 2
+  )
+
+UserPlace.create!(
+  name: 'Le Wagon Lyon',
+  address: 'rue Paul Montrochet, Lyon',
+  photo: "http://www.book-a-flat.com/images/paris-salon-2.jpg",
+  capacity: rand(1..5).to_i,
+  price: rand(8..15).to_i,
+  user_id: 2
   )
 
 
