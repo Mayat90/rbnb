@@ -2,13 +2,13 @@
 
 <div class="myflex">
   <div>
-    <%= link_to new_user_place_reservation_path(@user_place) do %>
-  <%= render 'shared/flat' %>
+    <% @user_places.each do |user_place| %>
+      <% @user_place = user_place %>
+      <%= link_to new_user_place_reservation_path(@user_place) do %>
+      <%= render 'shared/flat' %>
+      <% end %>
   <% end %>
 
-  <%= render 'shared/flat' %>
-
-  <%= render 'shared/flat' %>
   </div>
 <div id="map" style="width: 100%; height: 600px;"></div>
 <% content_for(:after_js) do %>
