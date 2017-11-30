@@ -1,31 +1,55 @@
 <div class="welcome" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://images.parents.mdpcdn.com/sites/parents.com/files/styles/scale_1500_1500/public/ZdorovKirillVladimirovich_0.jpg');">
-  <div">
+  <div class="center">
     <h1>Welcome to AirBabynB</h1>
     <p>Trouvez votre airbabysitter près de chez vous !</p>
-    <%= form_tag("/user_places", method: "GET", class:"form-group") do %>
-        <div class="row center">
-            <div class="form-group">
-                <%= label_tag("Adresse") %>
-                <%= text_field_tag 'address' %>
+    <%= form_tag("/search", method: "GET", class:"form-group") do %>
+          <div class="center">
+              <div class="form-group center">
+                  <%= label_tag("Adresse") %>
+                  <%= text_field_tag 'address', @data[:address], id: "address" %>
+              </div>
+          </div>
+      <div class="myflex">
+        <div class="twocol">
+
+
+          <%= label_tag "a partir de :" %>
+          <div class='input-group date' id='datetimepicker1'>
+            <%= text_field_tag 'start', @data[:start], class: "form-control" %>
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+          </div>
+
+
+          <div class="row center">
+            <div class="input-group">
+                <%= label_tag("Nombre d'enfants a garder") %>
+                <%= text_field_tag 'number_of_kids', @data[:number_of_kids], type: "number" %>
             </div>
+          </div>
         </div>
-        <div class="row center">
-            <div class="form-group">
-                <%= label_tag("Date de début") %>
-                <%= text_field_tag 'start' %>
-            </div>
+        <div class="twocol">
+          <%= label_tag "jusqu'a :" %>
+          <div class='input-group date' id='datetimepicker2'>
+            <%= text_field_tag 'end', @data[:end], class: "form-control" %>
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+          </div>
+          <div class="row center">
+              <div class="form-group">
+                  <%= check_box("domicile", "", { id: "check", checked: session[:domicile]}, "yes", "no") %>Je souhaite une garde a domicile
+              </div>
+          </div>
+
         </div>
-        <div class="row center">
-            <div class="form-group">
-                <%= label_tag("Date de fin") %>
-                <%= text_field_tag 'end' %>
-            </div>
-        </div>
-        <div class="row center">
-            <div class="form-group">
-                <%= button_tag "Trouver BabynB" %>   
-            </div>
-        </div>
+      </div>
+          <div class="center">
+              <div class="form-group">
+                  <%= button_tag "Trouver BabynB", id: "but" %>
+              </div>
+          </div>
     <% end %>
   </div>
 </div>

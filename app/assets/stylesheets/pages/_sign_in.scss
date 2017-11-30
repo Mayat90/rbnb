@@ -13,6 +13,16 @@ body {
   font-weight: 300;
 }
 
+#check {
+  width:20px;
+  height:20px;
+}
+#address {
+  width: 100%;
+}
+#but {
+  color: black;
+}
 h1 {
   margin: 0 0 20px 0;
   font-weight: 300;
@@ -50,6 +60,7 @@ h1 {
 }
 
 input[type="text"],
+input[type="number"],
 input[type="email"],
 input[type="password"] {
   display: block;
@@ -64,9 +75,11 @@ input[type="password"] {
   font-weight: 400;
   font-size: 15px;
   transition: 0.2s ease;
+  color: black;
 }
 
 input[type="text"]:focus,
+input[type="number"],
 input[type="email"]:focus,
 input[type="password"]:focus {
   border-bottom: 2px solid #16a085;
