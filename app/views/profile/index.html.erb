@@ -1,10 +1,12 @@
-je cherche une <%= @garde %> pour <%= session['number_of_kids'] %> enfant(s) de <%= session['start'] %> à <%= session['end'] %> a l'adresse : <%= session['address'] %>
+je cherche une <%= @garde %> pour <%= session['number_of_kids'] %> enfant(s) de <%= session['start'] %> à <%= session['end'] %> autour de l'adresse : <%= session['address'] %>
 
 <div class="container">
 
 <div class="myflex">
 
 <div id="map" style="width: 100%; height: 600px;"></div>
+
+
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
     var handler = Gmaps.build('Google');

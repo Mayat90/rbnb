@@ -1,6 +1,18 @@
 class ProfileController < ApplicationController
   def index
+    session['address']= params["address"] if params["address"]
+    session['start']= params["start"] if params["start"]
+    session['end']= params["end"] if params["end"]
+    session['number_of_kids']= params["number_of_kids"] if params["number_of_kids"]
+    if params["domicile"]
+      session['domicile']= false if params["domicile"].include?("no")
+      session['domicile']= true if params["domicile"].include?("yes")
+    end
+    session['domicile'] ? @garde = "babysitter" : @garde = "garde"
+
     @users = User.where.not(latitude: nil, longitude: nil)
+    p "*******************************************************************************"
+p @users
     @markers = Gmaps4rails.build_markers(@users) do |user_place, marker|
       marker.lat user_place.latitude
       marker.lng user_place.longitude
@@ -20,18 +32,6 @@ class ProfileController < ApplicationController
     else
       render 'edit'
     end
-  end
-
-  def index
-    session['address']= params["address"] if params["address"]
-    session['start']= params["start"] if params["start"]
-    session['end']= params["end"] if params["end"]
-    session['number_of_kids']= params["number_of_kids"] if params["number_of_kids"]
-    if params["domicile"]
-      session['domicile']= false if params["domicile"].include?("no")
-      session['domicile']= true if params["domicile"].include?("yes")
-    end
-    session['domicile'] ? @garde = "babysitter" : @garde = "garde"
   end
 
 private
