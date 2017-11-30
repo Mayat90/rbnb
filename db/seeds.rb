@@ -20,7 +20,7 @@ require 'as-duration'
        number_of_kids: nb,
        babysitter: true,
        garde_a_domicile: true,
-       photo: "http://lorempixel.com/400/200/people",
+       photo: "",
        iban: Faker::Code.ean,
        address: "lyon 100 cours charlemagne"
      )
@@ -36,7 +36,7 @@ require 'as-duration'
        number_of_kids: nb,
        babysitter: true,
        garde_a_domicile: false,
-       photo: "http://lorempixel.com/400/200/people",
+       photo: "",
        iban: Faker::Code.ean,
        address: "lyon 20 cours charlemagne"
      )
@@ -52,7 +52,7 @@ require 'as-duration'
        number_of_kids: nb,
        babysitter: false,
        garde_a_domicile: true,
-       photo: "http://lorempixel.com/400/200/people",
+       photo: "",
        iban: Faker::Code.ean,
        address: "lyon 10 cours suchet"
      )
@@ -69,7 +69,7 @@ require 'as-duration'
        number_of_kids: nb,
        babysitter: true,
        garde_a_domicile: true,
-       photo: "http://lorempixel.com/400/200/people",
+       photo: "",
        iban: Faker::Code.ean,
        address: "lyon 2 rue ravat"
      )
