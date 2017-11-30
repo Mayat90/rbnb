@@ -1,5 +1,14 @@
 class ProfileController < ApplicationController
-    def show
+  def index
+    @users = User.where.not(latitude: nil, longitude: nil)
+    @markers = Gmaps4rails.build_markers(@users) do |user_place, marker|
+      marker.lat user_place.latitude
+      marker.lng user_place.longitude
+      marker.infowindow content_info_window(user_place)
+    end
+  end
+
+  def show
   end
 
   def edit
@@ -27,7 +36,11 @@ class ProfileController < ApplicationController
 
 private
   def profile_params
-    params.require(:user).permit(:first_name, :last_name, :email, :iban, :number_of_kids,:babysitter, :description, :photo, :cphoto)
+    params.require(:user).permit(:first_name, :last_name, :email, :iban, :number_of_kids,:babysitter, :description, :photo, :cphoto, :address, :capacity, :garde_a_domicile)
+  end
+
+  def content_info_window(user)
+    return "#{user.address} <br/> Babysitter: #{user.first_name} #{user.last_name}"
   end
 
 end

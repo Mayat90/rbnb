@@ -14,6 +14,9 @@ class User < ApplicationRecord
 
   has_attachment :cphoto
 
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
+
   validates :first_name, presence: true
   validates :last_name, presence: true
 

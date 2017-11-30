@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   get 'profile/edit', to: 'profile#edit'
   post 'profile/edit', to: 'profile#update'
   get 'search', to: 'profile#index'
-  # get 'user_places/find', to: 'user_places#find'
 
   devise_for :users,
   controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }

@@ -3,6 +3,7 @@
     <h1>Welcome to AirBabynB</h1>
     <p>Trouvez votre airbabysitter près de chez vous !</p>
     <%= form_tag("/search", method: "GET", class:"form-group") do %>
+
           <div class="center">
               <div class="form-group center">
                   <%= label_tag("Adresse") %>
@@ -26,9 +27,11 @@
             <div class="input-group">
                 <%= label_tag("Nombre d'enfants a garder") %>
                 <%= text_field_tag 'number_of_kids', @data[:number_of_kids], type: "number" %>
+
             </div>
           </div>
         </div>
+
         <div class="twocol">
           <%= label_tag "jusqu'a :" %>
           <div class='input-group date' id='datetimepicker2'>
@@ -42,6 +45,7 @@
                   <%= check_box("domicile", "", { id: "check", checked: session[:domicile]}, "yes", "no") %>Je souhaite une garde a domicile
               </div>
           </div>
+
 
         </div>
       </div>
