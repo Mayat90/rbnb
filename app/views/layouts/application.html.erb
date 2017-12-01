@@ -24,8 +24,8 @@
     <%= yield(:after_js) %>
           <script type="text/javascript">
           $(function () {
-              $('#datetimepicker1').datetimepicker();
-              $('#datetimepicker2').datetimepicker();
+              $('#datetimepicker1').datetimepicker({format: 'DD-MM-YY HH:mm'});
+              $('#datetimepicker2').datetimepicker({format: 'DD-MM-YY HH:mm'});
           });
       </script>
     <%= render 'shared/footer' %>
