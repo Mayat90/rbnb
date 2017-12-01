@@ -1,28 +1,43 @@
 <div class="form-group">
-  <%= simple_form_for @reservation, :url => user_place_reservations_path, :method => :post do |f| %>
+  <%= simple_form_for @reservation, :url => reservations_path, :method => :post do |f| %>
   <div class="">
     <div>
-      <h2>Je souhaite resever <%= @babysitter.first_name %> <%= @babysitter.last_name %></h2>
+      <h2>Je souhaite resever <%= @reservation.babysitter.first_name %> <%= @reservation.babysitter.last_name %></h2>
+    </div>
+    <div>
+      <p> <%= @garde %> </p>
     </div>
     <div class="numberofkids">
       <%= f.input :number_of_kids, type: "number", label: "Nombre d'enfants" %>
     </div><br/>
-
-      <%= f.label "a partir de :" %>
-    <div class='input-group date' id='datetimepicker1'>
-      <%= f.text_field :start, class: "form-control" %>
-      <span class="input-group-addon">
-          <span class="glyphicon glyphicon-calendar"></span>
-      </span>
-    </div>
-      <%= f.label "jusqu'a :" %>
-    <div class='input-group date' id='datetimepicker2'>
-      <%= f.text_field :end, class: "form-control" %>
-      <span class="input-group-addon">
-          <span class="glyphicon glyphicon-calendar"></span>
-      </span>
+    <div class="myflex">
+      <div class="twocol">
+        <%= f.label "a partir de :" %>
+        <div class='input-group date' id='datetimepicker1'>
+          <%= f.text_field :start, class: "form-control" %>
+          <span class="input-group-addon">
+              <span class="glyphicon glyphicon-calendar"></span>
+          </span>
+        </div>
+      </div>
+      <div class="twocol">
+          <%= f.label "jusqu'a :" %>
+        <div class='input-group date' id='datetimepicker2'>
+          <%= f.text_field :end, class: "form-control" %>
+          <span class="input-group-addon">
+              <span class="glyphicon glyphicon-calendar"></span>
+          </span>
+        </div>
+        <%= f.association :parent %>
+        <%= f.association :babysitter %>
+        <%= f.input :address %>
+        <%= f.input :domicile %>
+        <%= f.input :confirm %>
+      </div>
     </div>
   </div>
+
+  <%= f.button :submit, "CONFIRMER" %>
   <% end %>
 </div>
 

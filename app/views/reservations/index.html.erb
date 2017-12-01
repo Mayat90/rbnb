@@ -1,22 +1,25 @@
 <div class="container">
 
       <div class="tabs">
-        <p class="tab-active">Vos airbabysitters</p>
-        <p href="#" class="tab">Vos airbabysittings</p>
+        <a  href="/reservations" class=" <%= @class[0] %>">Vos airbabyreservations</a>
+        <a href="/reservations/babysitting" class="<%= @class[1] %>">Vos airbabysittings</a>
       </div>
 
   <ul class="inbox">
-    <%= @parent_duration %>
-    <% @parent_reservations.each do |parent_reservation| %>
+    <% @reservations.each do |reservation| %>
     <div class="message">
       <img class="avatar-large" src="https://graph.facebook.com/v2.6/10154479522909159/picture?type=square">
       <div class="message-name">
-        <h3><%= parent_reservation.babysitter.first_name %> <%= parent_reservation.babysitter.last_name %></h3>
+        <h3><%= reservation.babysitter.first_name %> <%= reservation.babysitter.last_name %></h3>
      </div>
       <div class="message-body">
-        <p><strong>De <%= parent_reservation.start.strftime("%B %d, %Y %H:%M") %> à <%= parent_reservation.end.strftime("%B %d, %Y %H:%M") %></strong></p>
-        <p>Adresse</p>
+        <p><strong>
+          De <%= reservation.start.strftime("%A %d %B %Y, %H:%M") if reservation.start%><br/>
+          à <%= reservation.end.strftime("%A %d %B %Y, %H:%M") if reservation.end%>
+          </strong></p>
+        <p>Adresse : <%= reservation.address %></p>
       </div>
+
       <div class="message-status">
         <p class="status pending">En attente</p>
         <p class="price">€15</p>
@@ -24,20 +27,5 @@
     </div>
     <% end %>
 
-    <% @babysitter_reservations.each do |parent_reservation| %>
-    <div class="message">
-      <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-      <div class="message-name">
-        <h3><%= babysitter_reservation.babysitter.first_name %> <%= babysitter_reservation.babysitter.last_name %></h3>
-     </div>
-      <div class="message-body">
-        <p><strong>De <%= babysitter_reservation.start %> à <%= babysitter_reservation.end %></strong></p>
-      </div>
-      <div class="message-status">
-        <p class="status pending">En attente</p>
-        <p class="price">€15</p>
-      </div>
-    </div>
-    <% end %>
   </ul>
 </div>

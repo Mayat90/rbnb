@@ -10,8 +10,10 @@ class ProfileController < ApplicationController
     end
     session['domicile'] ? @garde = "babysitter" : @garde = "garde"
 
+
     @search_address = Geocoder.coordinates(session['address'])
     @users = User.where.not(latitude: nil, longitude: nil).near(@search_address, 10)
+
     @markers = Gmaps4rails.build_markers(@users) do |user_place, marker|
       marker.lat user_place.latitude
       marker.lng user_place.longitude
@@ -19,7 +21,7 @@ class ProfileController < ApplicationController
     end
 
     @markers << {lat: @search_address[0], lng: @search_address[1], infowindow: "Your Search </br>#{session['address']}"}
-    # binding.pry
+
   end
 
   def show
