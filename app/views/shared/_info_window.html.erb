@@ -1,5 +1,13 @@
 <div class="info_window">
-  <h3><%= user.first_name %> <%= user.last_name %></h3>
-  <p><%= user.address %></p>
-  <%= link_to "Reserver", "/resaconfirm?baby=#{user.id}", target: :blank, class: "btn btn-primary" %>
+  <div class="window-container">
+      <h3><%= user.first_name %> <%= user.last_name %></h3>
+      <p><%= user.address %></p>
+  </div>
+
+
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+      <%= link_to "Reserver", "/resaconfirm?baby=#{user.id}", target: :blank, class: "btn btn-primary" %>
+    <div class="pic-window"> <%= avatar_img_babysitter("img-circle", user) %>
+    </div>
+  </div>
 </div>
