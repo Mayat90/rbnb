@@ -21,7 +21,6 @@ class ProfileController < ApplicationController
     end
 
     @markers << {lat: @search_address[0], lng: @search_address[1], infowindow: "Your Search </br>#{session['address']}"}
-binding.pry
 
 
   end

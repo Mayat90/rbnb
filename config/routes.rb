@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post 'profile/edit', to: 'profile#update'
   get 'search', to: 'profile#index'
   get 'resaconfirm', to: 'reservations#new'
+  get 'reservations/babysitting', to: 'reservations#indexb'
 
   devise_for :users,
   controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
