@@ -10,14 +10,18 @@ class ProfileController < ApplicationController
     end
     session['domicile'] ? @garde = "babysitter" : @garde = "garde"
 
-    @users = User.where.not(latitude: nil, longitude: nil)
-    p "*******************************************************************************"
-p @users
+
+    @search_address = Geocoder.coordinates(session['address'])
+    @users = User.where.not(latitude: nil, longitude: nil).near(@search_address, 10)
+
     @markers = Gmaps4rails.build_markers(@users) do |user_place, marker|
       marker.lat user_place.latitude
       marker.lng user_place.longitude
       marker.infowindow content_info_window(user_place)
     end
+
+    @markers << {lat: @search_address[0], lng: @search_address[1], infowindow: "Your Search </br>#{session['address']}"}
+
   end
 
   def show
@@ -40,7 +44,7 @@ private
   end
 
   def content_info_window(user)
-    return "#{user.address} <br/> Babysitter: #{user.first_name} #{user.last_name}"
+    return "<a href='/resaconfirm?baby=#{user.id}'>Babysitter: #{user.first_name} #{user.last_name}<br/> #{user.address}  </a>"
   end
 
 end
