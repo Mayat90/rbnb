@@ -62,33 +62,19 @@ require 'as-duration'
    bab = [true, false].sample
    User.create!(
        email: "tonton@gmail.com",
-       first_name: "Tonton",
-       last_name: "nuris",
-       description: Faker::Lorem.paragraph,
+       first_name: "Mattia",
+       last_name: "Lamouroux",
+       description: "J'adore les enfants"
        password: "azerty",
        number_of_kids: nb,
        babysitter: true,
        garde_a_domicile: true,
-       photo: "",
+       photo: "https://avatars0.githubusercontent.com/u/31513010?s=460&v=4",
        iban: Faker::Code.ean,
        address: "lyon 2 rue ravat"
      )
 
 p "c'est cool"
 
-
-
-# 100.times do
-#   start_time = Faker::Time.forward(7, :all)
-#   end_time = Faker::Time.forward(7, :all)
-#   if end_time > start_time
-#     availability = Availability.new(
-#       start: start_time,
-#       end: end_time,
-#       user_place_id: rand(1..10).to_i
-#     )
-#   availability.save!
-#   end
-# end
 
 

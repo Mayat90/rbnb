@@ -1,22 +1,17 @@
 <div class="form-group reservation">
   <%= simple_form_for @reservation, :url => resaconfirm_path, :method => :post do |f| %>
-  <div class="">
-    <div>
-      <h2>Faire une demande à <%= @babysitter.first_name %> <%= @babysitter.last_name %></h2>
+<div class="">
+  <h2>Faire une demande à <%= @babysitter.first_name %> <%= @babysitter.last_name %></h2>
+<div>
 <div class="form-group">
   <%= simple_form_for @reservation, :url => reservations_path, :method => :post do |f| %>
-  <div class="">
-    <div>
-      <h2>Je souhaite resever <%= @reservation.babysitter.first_name %> <%= @reservation.babysitter.last_name %></h2>
-    </div>
-    <div>
       <p> <%= @garde %> </p>
     </div>
     <div class="numberofkids">
       <%= f.input :number_of_kids, type: "number", label: "Nombre d'enfants à garder" %>
     </div><br/>
-    <div class="myflex">
-      <div class="twocol">
+
+      
         <%= f.label "a partir de :" %>
         <div class='input-group date' id='datetimepicker1'>
           <%= f.text_field :start, class: "form-control" %>
@@ -24,8 +19,8 @@
               <span class="glyphicon glyphicon-calendar"></span>
           </span>
         </div>
-      </div>
-      <div class="twocol">
+      <br/>
+      
           <%= f.label "jusqu'a :" %>
         <div class='input-group date' id='datetimepicker2'>
           <%= f.text_field :end, class: "form-control" %>
@@ -33,19 +28,18 @@
               <span class="glyphicon glyphicon-calendar"></span>
           </span>
         </div>
-        <%= f.association :parent %>
-        <%= f.association :babysitter %>
-        <%= f.input :address %>
-        <%= f.input :domicile %>
-        <%= f.input :confirm %>
-      </div>
-    </div>
+        <%= f.hidden_field :parent  %>
+        <%= f.hidden_field :babysitter %>
+        <%= f.hidden_field :address %>
+        <%= f.hidden_field :domicile %>
+        <%= f.hidden_field :confirm %>
+      
+
     <div class="form-group">
-    <%= button_tag "Demande de réservation", class: "btn btn-primary resa" %>
+  <%= f.button :submit, "Demande de réservation", class: "btn btn-primary resa" %>
     </div>
   </div>
 
-  <%= f.button :submit, "CONFIRMER" %>
   <% end %>
 </div>
 

@@ -4,6 +4,7 @@
   padding: 20px;
   border-radius: 3px;
   margin: 10px;
+  height: 520px;
 }
 
 .reservation h2 {
@@ -19,14 +20,19 @@
 #resabox {
   position: relative;
   margin: 5% auto;
-  width: 900px;
-  height: 600px;
+  width: 1200px;
+  height: 580px;
   background: #FFF;
   border-radius: 2px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
+.input-group-addon .calendar {
+  border: 0;
+}
+
 .resaleft {
+    display: flex;
   position: absolute;
   top: 0;
   left: 0;
@@ -42,6 +48,13 @@
   right: 0;
   box-sizing: border-box;
   padding: 40px;
-  width: 500px;
-  height: 400px;
+  width: 900px;
+  height: 500px;
+}
+
+.card-user-resa {
+  position: absolute;
+  width: 100px;
+  border-radius: 50%;
+  justify-content: center;
 }
