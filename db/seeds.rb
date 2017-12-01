@@ -9,87 +9,128 @@ require 'faker'
 require 'as-duration'
 
 
+
+
    nb = [1, 2, 3, 4].sample
    bab = [true, false].sample
    User.create!(
-       email: "toto@gmail.com",
-       first_name: "Toto",
-       last_name: "nuris",
-       description: Faker::Lorem.paragraph,
+       email: "mattia@gmail.com",
+       first_name: "Mattia",
+       last_name: "Lamouroux",
+       description: "Je sais changer les couches"
        password: "azerty",
        number_of_kids: nb,
        babysitter: true,
        garde_a_domicile: true,
-       photo: "",
+       photo: "https://avatars0.githubusercontent.com/u/31513010?s=460&v=4",
        iban: Faker::Code.ean,
-       address: "lyon 100 cours charlemagne"
+       address: "Montée de l'église Caluire"
      )
-
-   nb = [1, 2, 3, 4].sample
+      nb = [1, 2, 3, 4].sample
    bab = [true, false].sample
    User.create!(
-       email: "tata@gmail.com",
-       first_name: "Tata",
-       last_name: "nuris",
-       description: Faker::Lorem.paragraph,
-       password: "azerty",
-       number_of_kids: nb,
-       babysitter: true,
-       garde_a_domicile: false,
-       photo: "",
-       iban: Faker::Code.ean,
-       address: "lyon 20 cours charlemagne"
-     )
-
-   nb = [1, 2, 3, 4].sample
-   bab = [true, false].sample
-   User.create!(
-       email: "tutu@gmail.com",
-       first_name: "Tutu",
-       last_name: "nuris",
-       description: Faker::Lorem.paragraph,
-       password: "azerty",
-       number_of_kids: nb,
-       babysitter: false,
-       garde_a_domicile: true,
-       photo: "",
-       iban: Faker::Code.ean,
-       address: "lyon 10 cours suchet"
-     )
-
-
-   nb = [1, 2, 3, 4].sample
-   bab = [true, false].sample
-   User.create!(
-       email: "tonton@gmail.com",
-       first_name: "Tonton",
-       last_name: "nuris",
-       description: Faker::Lorem.paragraph,
+       email: "christophe@gmail.com",
+       first_name: "Christophe",
+       last_name: "Gachet",
+       description: "Je sais faire, j'en ai plein"
        password: "azerty",
        number_of_kids: nb,
        babysitter: true,
        garde_a_domicile: true,
-       photo: "",
+       photo: "   https://avatars0.githubusercontent.com/u/32262781?v=4",
        iban: Faker::Code.ean,
-       address: "lyon 2 rue ravat"
+       address: "11 bis rue du Doupra Lyon"
+     )
+      nb = [1, 2, 3, 4].sample
+   bab = [true, false].sample
+   User.create!(
+       email: "tiphanie@gmail.com",
+       first_name: "Tiphanie",
+       last_name: "Tourniaire",
+       description: "J'adore les enfants"
+       password: "azerty",
+       number_of_kids: nb,
+       babysitter: true,
+       garde_a_domicile: true,
+       photo: "https://avatars2.githubusercontent.com/u/31669955?v=4",
+       iban: Faker::Code.ean,
+       address: "59 place Voltaire Lyon"
+     )
+      nb = [1, 2, 3, 4].sample
+   bab = [true, false].sample
+    User.create!(
+       email: "laetitia@gmail.com",
+       first_name: "Laetitia",
+       last_name: "Ahamada",
+       description: "Come baby come !"
+       password: "azerty",
+       number_of_kids: nb,
+       babysitter: true,
+       garde_a_domicile: true,
+       photo: "https://avatars3.githubusercontent.com/u/32166166?v=4",
+       iban: Faker::Code.ean,
+       address: "place Carnot Lyon"
+     )
+       nb = [1, 2, 3, 4].sample
+   bab = [true, false].sample
+    User.create!(
+       email: "greg@gmail.com",
+       first_name: "Grégory",
+       last_name: "Blain",
+       description: "Disponible et sérieux"
+       password: "azerty",
+       number_of_kids: nb,
+       babysitter: true,
+       garde_a_domicile: true,
+       photo: "   https://avatars0.githubusercontent.com/u/32262781?v=4",
+       iban: Faker::Code.ean,
+       address: "place Bellecour Lyon"
+     )
+       nb = [1, 2, 3, 4].sample
+   bab = [true, false].sample
+        User.create!(
+       email: "antoine@gmail.com",
+       first_name: "Antoine",
+       last_name: "Marmoux",
+       description: "Comptez sur moi !"
+       password: "azerty",
+       number_of_kids: nb,
+       babysitter: true,
+       garde_a_domicile: true,
+       photo: "https://avatars2.githubusercontent.com/u/31132825?v=4",
+       iban: Faker::Code.ean,
+       address: "25 rue Sala Lyon"
+     )
+           nb = [1, 2, 3, 4].sample
+   bab = [true, false].sample
+    User.create!(
+       email: "marc@gmail.com",
+       first_name: "Marc",
+       last_name: "Thiry",
+       description: "Franchement j'envoie !"
+       password: "azerty",
+       number_of_kids: nb,
+       babysitter: true,
+       garde_a_domicile: true,
+       photo: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/klcom1iv5qdcsbm8kz5s.jpg",
+       iban: Faker::Code.ean,
+       address: "54 rue de la Charité Lyon"
      )
 
+
+80.times do
+  start_time = Faker::Time.between(DateTime.now - 10, DateTime.now  + 5)
+  end_time = Faker::Time.between(DateTime.now - 10, DateTime.now + 5)
+  if end_time > start_time
+    availability = Availability.new(
+      start: start_time,
+      end: end_time,
+      parent_id: rand(1..7).to_i
+      babysitter_id: rand(1..7).to_i
+    )
+  availability.save!
+  end
+end
 
 p "c'est cool"
-
-
-
-# 100.times do
-#   start_time = Faker::Time.forward(7, :all)
-#   end_time = Faker::Time.forward(7, :all)
-#   if end_time > start_time
-#     availability = Availability.new(
-#       start: start_time,
-#       end: end_time,
-#       user_place_id: rand(1..10).to_i
-#     )
-#   availability.save!
-#   end
-# end
-
 
