@@ -1,0 +1,7 @@
+const mydiv = document.querySelector('[data-id="res<%= @reservation.id %>"]');
+
+<% if @reservation.errors.any? %>
+  mydiv.innerHTML = "<%= j link_to "Payée", @reservation, class: "btn btn-primary", remote: true  %>";
+<% else %>
+  mydiv.innerHTML = "<%= j link_to "Archivée", "#", class: "btn btn-secondary", remote: true  %> ";
+<% end %>

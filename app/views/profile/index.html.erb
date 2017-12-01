@@ -1,11 +1,13 @@
-<p>Ma recherche: je cherche une <%= @garde %> pour <%= session['number_of_kids'] %> enfant(s) de <%= session['start'] %> à <%= session['end'] %> autour de l'adresse : <%= session['address'] %><p>
+<p><strong>Ma recherche:</strong> Je cherche une <%= @garde %> pour <%= session['number_of_kids'] %> enfant(s) de <%= session['start'] %> à <%= session['end'] %> autour de l'adresse : <%= session['address'] %></p>
 
   <div class="myflex">
     <div class="mygrow">
         <% @users.each do |user| %>
       <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="card">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <div class="card"  style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(<%= image_path("Backgroundkid#{rand(1..5)}.jpg") %>);">
+
+
             <div class="card-category">Adresse: <%= user.address %></div>
             <div class="card-description">
               <h2><%= user.first_name %> <%= user.last_name %></h2>

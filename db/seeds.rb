@@ -117,6 +117,7 @@ require 'as-duration'
        address: "54 rue de la Charité Lyon"
      )
 
+
 80.times do
   start_time = Faker::Time.between(DateTime.now - 10, DateTime.now  + 5)
   end_time = Faker::Time.between(DateTime.now - 10, DateTime.now + 5)
