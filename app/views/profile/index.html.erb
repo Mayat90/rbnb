@@ -12,6 +12,7 @@ je cherche une <%= @garde %> pour <%= session['number_of_kids'] %> enfant(s) de 
     var handler = Gmaps.build('Google');
     handler.buildMap({ internal: { id: 'map' } }, function() {
       markers = handler.addMarkers(<%= raw @markers.to_json %>);
+      (<%= raw @markers.last.to_json %>);
       handler.bounds.extendWith(markers);
       handler.fitMapToBounds();
       if (markers.length == 0) {
