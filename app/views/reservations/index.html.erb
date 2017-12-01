@@ -21,8 +21,26 @@
       </div>
 
       <div class="message-status">
-        <p class="status pending">En attente</p>
-        <p class="price">€15</p>
+        <p class="price">€<%= (5 + (reservation.end - reservation.start) / 60 / 60 * 5 * reservation.number_of_kids ).to_i %></p>
+        <% if @class[0] != "tab" %>
+            <% if reservation.confirm = false %>
+              <p class="status pending">En attente</p>
+            <% elsif reservation.pay = false %>
+              <p class="status pending">Confirmée</p>
+            <% else %>
+              <p class="status pending">Archivée</p>
+            <% end %>
+        <% else %>
+          <p data-id="res<%= reservation.id %>">
+            <% if reservation.confirm = false %>
+              <%= link_to "Confirmer", reservation, class: "btn btn-primary", remote: true  %>
+            <% elsif reservation.pay = false %>
+              <%= link_to "Payée", reservation, class: "btn btn-primary", remote: true  %>
+            <% else %>
+              <%= link_to "Archivée", "#", class: "btn btn-secondary", remote: true  %>
+            <% end %>
+            </p>
+        <% end %>
       </div>
     </div>
     <% end %>
