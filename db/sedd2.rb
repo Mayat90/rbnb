@@ -55,3 +55,52 @@ end
     babysitter_id: 5,
     number_of_kids: 3
     )
+
+   nb = [1, 2, 3, 4].sample
+   bab = [true, false].sample
+   User.create!(
+       email: "toto@gmail.com",
+       first_name: "Toto",
+       last_name: "nuris",
+       description: Faker::Lorem.paragraph,
+       password: "azerty",
+       number_of_kids: nb,
+       babysitter: true,
+       garde_a_domicile: true,
+       photo: "",
+       iban: Faker::Code.ean,
+       address: "lyon 100 cours charlemagne"
+     )
+
+   nb = [1, 2, 3, 4].sample
+   bab = [true, false].sample
+   User.create!(
+       email: "tata@gmail.com",
+       first_name: "Tata",
+       last_name: "nuris",
+       description: Faker::Lorem.paragraph,
+       password: "azerty",
+       number_of_kids: nb,
+       babysitter: true,
+       garde_a_domicile: false,
+       photo: "",
+       iban: Faker::Code.ean,
+       address: "lyon 20 cours charlemagne"
+     )
+
+   nb = [1, 2, 3, 4].sample
+   bab = [true, false].sample
+   User.create!(
+       email: "tutu@gmail.com",
+       first_name: "Tutu",
+       last_name: "nuris",
+       description: Faker::Lorem.paragraph,
+       password: "azerty",
+       number_of_kids: nb,
+       babysitter: false,
+       garde_a_domicile: true,
+       photo: "",
+       iban: Faker::Code.ean,
+       address: "lyon 10 cours suchet"
+     )
+
