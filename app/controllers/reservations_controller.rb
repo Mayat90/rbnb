@@ -55,9 +55,33 @@ class ReservationsController < ApplicationController
   end
 
   def show
+   @reservation.confirm = true
+    if @reservation.save
+      respond_to do |format|
+        format.html { redirect_to @reservation }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
+    else
+      respond_to do |format|
+        format.html { render 'show' }
+        format.js  # <-- idem
+      end
+    end
   end
 
   def edit
+       @reservation.pay = true
+    if @reservation.save
+      respond_to do |format|
+        format.html { redirect_to @reservation }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
+    else
+      respond_to do |format|
+        format.html { render 'show' }
+        format.js  # <-- idem
+      end
+    end
   end
 
   def update
@@ -82,7 +106,7 @@ class ReservationsController < ApplicationController
   end
 
   def set_reservation
-    @reservation = @reservations.find(params[:id])
+    @reservation = Reservation.find(params[:id])
   end
 
   def reservation_params
