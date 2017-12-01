@@ -17,12 +17,13 @@ require 'as-duration'
        email: "mattia@gmail.com",
        first_name: "Mattia",
        last_name: "Lamouroux",
-       description: "Je sais changer les couches"
+       description: "Je sais changer les couches",
        password: "azerty",
        number_of_kids: nb,
        babysitter: true,
        garde_a_domicile: true,
        photo: "https://avatars0.githubusercontent.com/u/31513010?s=460&v=4",
+       cphoto: "",
        iban: Faker::Code.ean,
        address: "Montée de l'église Caluire"
      )
@@ -32,12 +33,13 @@ require 'as-duration'
        email: "christophe@gmail.com",
        first_name: "Christophe",
        last_name: "Gachet",
-       description: "Je sais faire, j'en ai plein"
+       description: "Je sais faire, j'en ai plein",
        password: "azerty",
        number_of_kids: nb,
        babysitter: true,
        garde_a_domicile: true,
        photo: "   https://avatars0.githubusercontent.com/u/32262781?v=4",
+       cphoto: "",
        iban: Faker::Code.ean,
        address: "11 bis rue du Doupra Lyon"
      )
@@ -47,12 +49,13 @@ require 'as-duration'
        email: "tiphanie@gmail.com",
        first_name: "Tiphanie",
        last_name: "Tourniaire",
-       description: "J'adore les enfants"
+       description: "J'adore les enfants",
        password: "azerty",
        number_of_kids: nb,
        babysitter: true,
        garde_a_domicile: true,
        photo: "https://avatars2.githubusercontent.com/u/31669955?v=4",
+       cphoto: "",
        iban: Faker::Code.ean,
        address: "59 place Voltaire Lyon"
      )
@@ -62,12 +65,13 @@ require 'as-duration'
        email: "laetitia@gmail.com",
        first_name: "Laetitia",
        last_name: "Ahamada",
-       description: "Come baby come !"
+       description: "Come baby come !",
        password: "azerty",
        number_of_kids: nb,
        babysitter: true,
        garde_a_domicile: true,
        photo: "https://avatars3.githubusercontent.com/u/32166166?v=4",
+       cphoto: "",
        iban: Faker::Code.ean,
        address: "place Carnot Lyon"
      )
@@ -77,12 +81,13 @@ require 'as-duration'
        email: "greg@gmail.com",
        first_name: "Grégory",
        last_name: "Blain",
-       description: "Disponible et sérieux"
+       description: "Disponible et sérieux",
        password: "azerty",
        number_of_kids: nb,
        babysitter: true,
        garde_a_domicile: true,
-       photo: "   https://avatars0.githubusercontent.com/u/32262781?v=4",
+       photo: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/jmuqusfozwr7azb1qt46.jpg",
+       cphoto: "",
        iban: Faker::Code.ean,
        address: "place Bellecour Lyon"
      )
@@ -92,12 +97,13 @@ require 'as-duration'
        email: "antoine@gmail.com",
        first_name: "Antoine",
        last_name: "Marmoux",
-       description: "Comptez sur moi !"
+       description: "Comptez sur moi !",
        password: "azerty",
        number_of_kids: nb,
        babysitter: true,
        garde_a_domicile: true,
        photo: "https://avatars2.githubusercontent.com/u/31132825?v=4",
+       cphoto: "",
        iban: Faker::Code.ean,
        address: "25 rue Sala Lyon"
      )
@@ -107,12 +113,13 @@ require 'as-duration'
        email: "marc@gmail.com",
        first_name: "Marc",
        last_name: "Thiry",
-       description: "Franchement j'envoie !"
+       description: "Franchement j'envoie !",
        password: "azerty",
        number_of_kids: nb,
        babysitter: true,
        garde_a_domicile: true,
        photo: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/klcom1iv5qdcsbm8kz5s.jpg",
+       cphoto: "",
        iban: Faker::Code.ean,
        address: "54 rue de la Charité Lyon"
      )
@@ -122,11 +129,14 @@ require 'as-duration'
   start_time = Faker::Time.between(DateTime.now - 10, DateTime.now  + 5)
   end_time = Faker::Time.between(DateTime.now - 10, DateTime.now + 5)
   if end_time > start_time
-    availability = Availability.new(
+    availability = Reservation.new(
       start: start_time,
       end: end_time,
-      parent_id: rand(1..7).to_i
-      babysitter_id: rand(1..7).to_i
+      parent_id: rand(1..7).to_i,
+      babysitter_id: rand(1..7).to_i,
+      number_of_kids: 2,
+      confirm: false,
+      pay: false
     )
   availability.save!
   end

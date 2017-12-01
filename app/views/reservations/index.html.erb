@@ -8,7 +8,9 @@
   <ul class="inbox">
     <% @reservations.each do |reservation| %>
     <div class="message">
-      <img class="avatar-large" src="https://graph.facebook.com/v2.6/10154479522909159/picture?type=square">
+      <div style= "width: 80px; height: 80px;">
+        <%= avatar_img_babysitter("avatar-large", reservation.babysitter) %>
+      </div>
       <div class="message-name">
         <h3><%= reservation.babysitter.first_name %> <%= reservation.babysitter.last_name %></h3>
      </div>
@@ -23,19 +25,19 @@
       <div class="message-status">
         <p class="price">€<%= (5 + (reservation.end - reservation.start) / 60 / 60 * 5 * reservation.number_of_kids ).to_i %></p>
         <% if @class[0] != "tab" %>
-            <% if reservation.confirm = false %>
+            <% if reservation.confirm == false %>
               <p class="status pending">En attente</p>
-            <% elsif reservation.pay = false %>
+            <% elsif reservation.pay == false %>
               <p class="status pending">Confirmée</p>
             <% else %>
               <p class="status pending">Archivée</p>
             <% end %>
         <% else %>
           <p data-id="res<%= reservation.id %>">
-            <% if reservation.confirm = false %>
+            <% if reservation.confirm == false %>
               <%= link_to "Confirmer", reservation, class: "btn btn-primary", remote: true  %>
-            <% elsif reservation.pay = false %>
-              <%= link_to "Payée", reservation, class: "btn btn-primary", remote: true  %>
+            <% elsif reservation.pay == false %>
+              <%= link_to "Archiver", reservation, class: "btn btn-primary", remote: true  %>
             <% else %>
               <%= link_to "Archivée", "#", class: "btn btn-secondary", remote: true  %>
             <% end %>
