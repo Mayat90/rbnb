@@ -1,5 +1,5 @@
 <div class="form-group reservation">
-  <%= simple_form_for @reservation, :url => user_place_reservations_path, :method => :post do |f| %>
+  <%= simple_form_for @reservation, :url => resaconfirm_path, :method => :post do |f| %>
   <div class="">
     <div>
       <h2>Faire une demande à <%= @babysitter.first_name %> <%= @babysitter.last_name %></h2>
@@ -51,4 +51,5 @@
 
 <% content_for(:after_js) do %>
 
+<% end %>
 <% end %>
