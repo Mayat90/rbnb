@@ -4,10 +4,15 @@ class ReservationsController < ApplicationController
 
 
   def index
-    @parent_reservations = current_user.parent_reservations
-    @babysitter_reservations = current_user.babysitter_reservations
+    @class = ["tab-active", "tab"]
+    @reservations = current_user.parent_reservations
   end
 
+  def indexb
+    @class = ["tab", "tab-active"]
+    @reservations = current_user.babysitter_reservations
+    render ('index')
+  end
 
   def new
     session['babysitter'] = params['baby'].to_i
@@ -39,6 +44,8 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params)
+    @reservation.start = timeconvert(reservation_params[:start])
+    @reservation.end = timeconvert(reservation_params[:end])
 
     if @reservation.save
       redirect_to reservations_path
@@ -62,6 +69,13 @@ class ReservationsController < ApplicationController
   end
 
   private
+
+  def timeconvert(str)
+    t = str.split(' ')
+    t2 = t[0].split('-')
+    "20" + t2[2] + "-" + t2[1] + "-" + t2[0] + " " + t[1]
+
+  end
 
   def set_user_place
     # @user_place = UserPlace.find(params[:user_place_id])
