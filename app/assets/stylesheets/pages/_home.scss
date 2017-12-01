@@ -3,6 +3,7 @@
   color: white;
   text-align: center;
   height: calc(100vh - 70px);
+  width:100%;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
@@ -29,4 +30,8 @@
  background: #FAFAFA;
  border-radius: 2px;
  color: rgba(23,99,142,1);
+}
+
+.form-control {
+  border-shadow:0;
 }

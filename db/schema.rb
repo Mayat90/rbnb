@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20171201141216) do
 
   # These are extensions that must be enabled in order to support this database
@@ -112,6 +113,7 @@ ActiveRecord::Schema.define(version: 20171201141216) do
     t.boolean  "garde_a_domicile"
     t.integer  "capacity"
     t.string   "address"
+    t.float    "price"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end

@@ -1,0 +1,48 @@
+.reservation {
+  display: flex;
+  background: #F4F4F4;
+  padding: 20px;
+  border-radius: 3px;
+  margin: 10px;
+
+}
+
+.reservation h2 {
+  font-size: 30px;
+}
+
+.resa {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  
+}
+
+#resabox {
+  position: relative;
+  margin: 5% auto;
+  width: 900px;
+  height: 600px;
+  background: #FFF;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.resaleft {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding: 40px;
+  width: 300px;
+  height: 400px;
+}
+
+.resaright {
+  position: absolute;
+  top: 0;
+  right: 0;
+  box-sizing: border-box;
+  padding: 40px;
+  width: 500px;
+  height: 400px;
+}

@@ -9,15 +9,26 @@
       </div>
 
       <div class="form-actions">
-        <%= f.button :submit, "Connexion" %>
+        <%= f.button :submit, "Connexion", class: "btn btn-primary" %>
       </div>
-      <span class="loginwith"><br />Réseaux sociaux</span>    
-      <button class="social-signin facebook">Connexion Facebook</button>
-      <button class="social-signin google">Connexion Google+</button>
+      <%= link_to 'Facebook', omniauth_authorize_path('user', 'facebook'), class: "btn btn-default btnfacebook"  %>      
+      <%= link_to 'Google', omniauth_authorize_path('user', 'google_oauth2'), class: "btn btn-default btngoogle"  %>
+      
+<!--       <button class="social-signin facebook">Connexion Facebook</button>
+      <button class="social-signin google">Connexion Google+</button> -->
     <% end %>
 
-<%= render "devise/shared/links" %>
+    <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+      <%= link_to "Pas de compte ? Inscrivez-vous", new_registration_path(resource_name) %><br />
+    <% end -%>
 
+    <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+      <%= link_to "Mot de passe oublié?", new_password_path(resource_name) %><br />
+    <% end -%>
+
+  </div>
+  <div class="right">
+    
   </div>
 </div>
 
