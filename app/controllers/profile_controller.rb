@@ -11,8 +11,6 @@ class ProfileController < ApplicationController
     session['domicile'] ? @garde = "babysitter" : @garde = "garde"
 
     @users = User.where.not(latitude: nil, longitude: nil)
-    p "*******************************************************************************"
-p @users
     @markers = Gmaps4rails.build_markers(@users) do |user_place, marker|
       marker.lat user_place.latitude
       marker.lng user_place.longitude
