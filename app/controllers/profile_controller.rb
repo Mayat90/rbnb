@@ -22,7 +22,6 @@ class ProfileController < ApplicationController
 
     @markers << {lat: @search_address[0], lng: @search_address[1], infowindow: "Your Search </br>#{session['address']}"}
 
-
   end
 
   def show
@@ -45,7 +44,7 @@ private
   end
 
   def content_info_window(user)
-    return "#{user.address} <br/> Babysitter: #{user.first_name} #{user.last_name}"
+    return "<a href='/resaconfirm?baby=#{user.id}'>Babysitter: #{user.first_name} #{user.last_name}<br/> #{user.address}  </a>"
   end
 
 end

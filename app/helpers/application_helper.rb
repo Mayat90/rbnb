@@ -13,4 +13,14 @@ module ApplicationHelper
        image_tag("avatar.png", class: "avatarimg #{myclass}")
     end
   end
+
+  def avatar_img_babysitter(myclass, user)
+    if user.cphoto
+        cl_image_tag user.cphoto.path, width: 150, height: 150, crop: :fill, class: "avatarimg #{myclass}"
+    elsif user.photo != "" && user.photo != nil
+       image_tag(user.photo, class: "avatarimg #{myclass}")
+    else
+       image_tag("avatar.png", class: "avatarimg #{myclass}")
+    end
+  end
 end
