@@ -1,4 +1,6 @@
 class ProfileController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
+
   def index
     session['address']= params["address"] if params["address"]
     session['start']= params["start"] if params["start"]
@@ -14,10 +16,11 @@ class ProfileController < ApplicationController
     @search_address = Geocoder.coordinates(session['address'])
     @users = User.where.not(latitude: nil, longitude: nil).near(@search_address, 10)
 
-    @markers = Gmaps4rails.build_markers(@users) do |user_place, marker|
-      marker.lat user_place.latitude
-      marker.lng user_place.longitude
-      marker.infowindow content_info_window(user_place)
+    @markers = Gmaps4rails.build_markers(@users) do |user, marker|
+      marker.lat user.latitude
+      marker.lng user.longitude
+      # marker.infowindow content_info_window(user)
+      marker.infowindow render_to_string(partial: "/shared/info_window", locals: { user: user})
     end
 
     @markers << {lat: @search_address[0], lng: @search_address[1], infowindow: "Your Search </br>#{session['address']}"}
