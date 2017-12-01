@@ -1,11 +1,11 @@
-<div class="form-group">
+<div class="form-group reservation">
   <%= simple_form_for @reservation, :url => user_place_reservations_path, :method => :post do |f| %>
   <div class="">
     <div>
-      <h2>Je souhaite resever <%= @babysitter.first_name %> <%= @babysitter.last_name %></h2>
+      <h2>Faire une demande à <%= @babysitter.first_name %> <%= @babysitter.last_name %></h2>
     </div>
     <div class="numberofkids">
-      <%= f.input :number_of_kids, type: "number", label: "Nombre d'enfants" %>
+      <%= f.input :number_of_kids, type: "number", label: "Nombre d'enfants à garder" %>
     </div><br/>
 
       <%= f.label "a partir de :" %>
@@ -21,6 +21,9 @@
       <span class="input-group-addon">
           <span class="glyphicon glyphicon-calendar"></span>
       </span>
+    </div>
+    <div class="form-group">
+    <%= button_tag "Demande de réservation", class: "btn btn-primary resa" %>
     </div>
   </div>
   <% end %>
