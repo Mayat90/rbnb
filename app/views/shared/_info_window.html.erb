@@ -1,2 +1,5 @@
-<p><%= @user_place.name %></p>
-<p><%= @user_place.user.first_name %> <%= @user_place.user.last_name %> </p>
+<div class=“info_window”>
+  <h3><%= sitter.first_name %></h3>
+  <p><%= sitter.address %></p>
+  <%= link_to “Details”, sitter_path(sitter), target: :blank, class: “btn btn-warning” %>
+</div>
