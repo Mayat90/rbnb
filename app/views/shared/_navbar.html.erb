@@ -9,7 +9,6 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Logements", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Réservations", reservations_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
@@ -23,11 +22,6 @@
             <li>
               <%= link_to profile_path do %>
                 <i class="fa fa-user"></i> <%= t(".profile", default: "Profil") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to root_path do %>
-                <i class="fa fa-home"></i>  <%= t(".profile", default: "Logements") %>
               <% end %>
             </li>
             <li>
