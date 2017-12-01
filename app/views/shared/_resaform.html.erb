@@ -28,12 +28,14 @@
               <span class="glyphicon glyphicon-calendar"></span>
           </span>
         </div>
-        <%= f.hidden_field :parent  %>
-        <%= f.hidden_field :babysitter %>
-        <%= f.hidden_field :address %>
-        <%= f.hidden_field :domicile %>
-        <%= f.hidden_field :confirm %>
-
+        <div style="display:none">
+          <%= f.association :parent  %>
+          <%= f.association :babysitter %>
+          <%= f.input :address %>
+          <%= f.input :domicile, value: false %>
+          <%= f.input :confirm, value: false %>
+          <%= f.input :pay, value: false %>
+        </div>
 
     <div class="form-group">
   <%= f.button :submit, "Demande de réservation", class: "btn btn-primary resa" %>

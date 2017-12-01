@@ -5,12 +5,12 @@ class ReservationsController < ApplicationController
 
   def index
     @class = ["tab-active", "tab"]
-    @reservations = current_user.parent_reservations
+    @reservations = current_user.parent_reservations.reverse
   end
 
   def indexb
     @class = ["tab", "tab-active"]
-    @reservations = current_user.babysitter_reservations
+    @reservations = current_user.babysitter_reservations.reverse
     render ('index')
   end
 
@@ -46,7 +46,8 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
     @reservation.start = timeconvert(reservation_params[:start])
     @reservation.end = timeconvert(reservation_params[:end])
-
+    @reservation.confirm = false
+    @reservation.pay = false
     if @reservation.save
       redirect_to reservations_path
     else
@@ -110,6 +111,6 @@ class ReservationsController < ApplicationController
   end
 
   def reservation_params
-    params.require(:reservation).permit(:parent_id, :babysitter_id, :address,:start, :end, :number_of_kids, :domicile, :confirm)
+    params.require(:reservation).permit(:pay, :parent_id, :babysitter_id, :address,:start, :end, :number_of_kids, :domicile, :confirm)
   end
 end
