@@ -8,8 +8,8 @@
 require 'faker'
 require 'as-duration'
 
-
-
+Reservation.destroy_all
+User.destroy_all
 
    nb = [1, 2, 3, 4].sample
    bab = [true, false].sample
